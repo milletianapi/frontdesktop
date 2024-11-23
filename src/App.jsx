@@ -1,10 +1,10 @@
 import './App.css';
-import {MainPage} from "./pages/MainPage.jsx";
+import {SearchOne} from "./pages/SearchOne.jsx";
 
 function App() {
     return (
         <div className="App w-full">
-            <MainPage/>
+            <SearchOne/>
         </div>
     );
 }

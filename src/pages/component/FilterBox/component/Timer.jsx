@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
 
-export const Header = () => {
+export const Timer = () => {
     const CYCLE_DURATION = 36 * 60 * 1000;
 
     const getInitialCycleData = () => {
@@ -12,11 +12,11 @@ export const Header = () => {
         const nextCycleTime = (currentCycle * CYCLE_DURATION) + startTime.getTime();
         const timeLeft = nextCycleTime - now.getTime();
 
-        return { cycleCount: currentCycle, timeLeft };
+        return {cycleCount: currentCycle, timeLeft};
     };
 
     const [time, setTime] = useState(new Date());
-    const [{ cycleCount, timeLeft }, setCycleData] = useState(getInitialCycleData);
+    const [{cycleCount, timeLeft}, setCycleData] = useState(getInitialCycleData);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -55,20 +55,9 @@ export const Header = () => {
     }, [formattedTime, cycleCount]);
 
     return (
-        <div className={"mt-[15px] w-full flex justify-center"}>
-            <div className={"w-[360px] flex flex-wrap"}>
-                <div className={"w-[88px] h-[88px] bg-[#82FFDB] rounded-[10px]"}></div>
-                <div className={"pl-[7px] pt-[7px]"}>
-                    <p style={{fontSize: `20px`, lineHeight: `22px`}}>밀레시안API</p>
-                    <p className={"text-[#858585] mt-1.5 pl-0.5"} style={{fontSize: `11px`, lineHeight: `13px`}}>Email :
-                        yoop80075@gmail.com<br/>UI design : socanu@naver.com<br/>Image URL Decoding by
-                        @jumeonidik3038<br/>Data based on NEXON Open API</p>
-                </div>
-                <div className={"w-full h-[10px]"}></div>
-                <div
-                    className={"w-full text-[#404040] flex justify-center rounded-[5px] h-[21px] bg-[#FFDEE1] items-center pt-[2px]"}
-                    style={{letterSpacing: `0.1em`}}>{handleTime()}</div>
-            </div>
+        <div
+            className="w-[386px] h-[50px] rounded-[5px] border border-[#9f7394] justify-center items-center flex text-[#3f3f3f] text-sm tracking-wider">
+            {handleTime()}
         </div>
     );
 };

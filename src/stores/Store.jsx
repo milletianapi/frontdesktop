@@ -24,7 +24,7 @@ export const pouchesState = atom({
 
 const createColorState = () => ({
     hex: "#000000",
-    rgb: { r: "0", g: "0", b: "0" },
+    rgb: {r: 0, g: 0, b: 0},
     selectCollection: false,
     selectColorList: JSON.parse(localStorage.getItem(`selectColor`) || "[]"),
     active: false,

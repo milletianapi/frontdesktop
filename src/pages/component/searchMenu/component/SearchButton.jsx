@@ -5,33 +5,29 @@ export const SearchButton = ({handleSearch, isSearchEnabled, handleReset, handle
     const resetFilterColorState = useResetRecoilState(filterColorState);
 
     return (
-        <div className={"mt-[7px] ml-[5px]"}>
+        <div className="w-[111px] h-[79px] gap-[5px] flex flex-wrap text-xs">
             <button
-                className="w-[104px] h-[19px] bg-[#baa0e1] rounded-[5px] justify-center items-center flex active:bg-[#c571c6] pt-0.5"
+                className="w-[111px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
                 onClick={handleSearch}
-                disabled={!isSearchEnabled}
-            >
+                disabled={!isSearchEnabled}>
                 검색하기
             </button>
             <button
-                className="mt-1.5 w-[104px] h-[19px] bg-[#baa0e1] rounded-[5px] justify-center items-center flex active:bg-[#c571c6] pt-0.5"
+                className="w-[111px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
                 onClick={() => {
                     handleReset();
                     resetFilterColorState();
-                }}
-            >
+                }}>
                 조건초기화
             </button>
-            <div className={"mt-1.5 flex"}>
+            <div className={"flex gap-[5px]"}>
                 <button
-                    className="w-[50px] h-[19px] bg-[#baa0e1] rounded-[5px] justify-center items-center flex active:bg-[#c571c6]"
-                    onClick={() => handleChannelNavigation('previous')}
-                >◀
+                    className="w-[53px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
+                    onClick={() => handleChannelNavigation('previous')}>이전채널
                 </button>
                 <button
-                    className="ml-1 w-[50px] h-[19px] bg-[#baa0e1] rounded-[5px] justify-center items-center flex active:bg-[#c571c6]"
-                    onClick={() => handleChannelNavigation('next')}
-                >▶
+                    className="w-[53px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
+                    onClick={() => handleChannelNavigation('next')}>다음채널
                 </button>
             </div>
         </div>

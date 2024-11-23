@@ -24,7 +24,6 @@ export const TradeSelect = ({selectedTradeOption, handleTradeChange}) =>
                     isSearchable
                     placeholder=" 벨바스트"
                     styles={tradeStyles}
-                    className="mt-[5px]"
                 />
             </div>
             <div className="flex justify-center flex-wrap">
@@ -35,7 +34,6 @@ export const TradeSelect = ({selectedTradeOption, handleTradeChange}) =>
                     isSearchable
                     placeholder=" 이리아 대륙"
                     styles={tradeStyles}
-                    className="mt-[5px]"
                 />
             </div>
         </div>

@@ -92,10 +92,10 @@ export const tradeStyles = {
 export const channelStyles = {
     control: (provided) => ({
         ...provided,
-        width: 89,
-        height: 21,
-        fontSize: 10,
-        minHeight: '21px',
+        width: 109,
+        height: 25,
+        fontSize: 11.5,
+        minHeight: '25px',
         minWidth: '10px',
         alignItems: 'center',
         padding: '0px',
@@ -104,37 +104,36 @@ export const channelStyles = {
     }),
     valueContainer: (provided) => ({
         ...provided,
-        height: '21px',
+        height: '25px',
         padding: '0px 8px',
         display: 'flex',
         alignItems: 'center',
-        textColor: '#2E2E2E',
+        textColor: '#3f3b66',
     }),
     placeholder: (provided) => ({
         ...provided,
         margin: '0px',
         padding: '0px',
         transform: 'translateY(-1px)',
-        color: '#2E2E2E',
+        color: '#3f3b66',
     }),
     singleValue: (provided) => ({
         ...provided,
         margin: '0px',
         padding: '0px',
-        color: '#2E2E2E',
+        color: '#3f3b66',
     }),
     input: (provided) => ({
         ...provided,
         margin: '0px',
         padding: '0px',
-        color: '#2E2E2E'
+        color: '#3f3b66'
     }),
     indicatorsContainer: (provided) => ({
         ...provided,
-        height: '21px',
+        height: '25px',
         width: '21px',
         padding: '0px',
-        backgroundColor: `#D5B8E6`,
         transform: 'translate(1px, -1px)',
         borderRadius: '5px',
     }),
@@ -154,7 +153,7 @@ export const channelStyles = {
     menu: (provided) => ({
         ...provided,
         marginTop: `1px`,
-        width: 89,
+        width: 109,
         border: `1px solid #FFCCE6`,
         borderRadius: `5px`,
     }),
@@ -165,16 +164,18 @@ export const channelStyles = {
     }),
     option: (provided, state) => ({
         ...provided,
-        height: 21,
+        height: 25,
         padding: '7px 8px',
         backgroundColor: state.isSelected ? '#BAA0E1' : state.isFocused ? `#BAA0E1` : 'white',
         color: `black`,
         cursor: 'pointer',
         borderRadius: `5px`,
+        fontSize: 11.5,
     }),
 };
 
 export const serverOptions = [
+    {value: 'all', label: '전 서버'},
     { value: 'lute', label: '류트' },
     { value: 'harp', label: '하프' },
     { value: 'mandolin', label: '만돌린' },
@@ -182,6 +183,7 @@ export const serverOptions = [
 ];
 
 export const channelOptions = {
+    all: Array.from({length: 96}, (_, i) => ({value: `channel_${i + 1}`, label: `${i + 1} 채널`})),
     lute: Array.from({ length: 42 }, (_, i) => ({ value: `channel_${i + 1}`, label: `${i + 1} 채널` })),
     harp: Array.from({ length: 24 }, (_, i) => ({ value: `channel_${i + 1}`, label: `${i + 1} 채널` })),
     mandolin: Array.from({ length: 15 }, (_, i) => ({ value: `channel_${i + 1}`, label: `${i + 1} 채널` })),
@@ -203,11 +205,11 @@ export const tradeOptionsBelfast = [
     { value: 'beachOfScathach', label: '스카하 해변' },
 ];
 export const tradeOptionsIria = [
-    { value: 'qillaBaseCamp', label: '켈라 베이스 캠프' },
+    {value: 'qillaBaseCamp', label: '켈라'},
     { value: 'filia', label: '필리아' },
     { value: 'vales', label: '발레스' },
     { value: 'cor', label: '코르' },
-    {value: 'calidaExplorationCamp', label: '칼리다 탐사 캠프'},
+    {value: 'calidaExplorationCamp', label: '칼리다'},
     { value: 'oasis', label: '오아시스' },
     { value: 'caruForest', label: '카루 숲' },
     { value: 'pela', label: '페라 화산' },
