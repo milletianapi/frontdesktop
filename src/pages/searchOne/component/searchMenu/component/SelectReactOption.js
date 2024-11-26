@@ -214,4 +214,5 @@ export const tradeOptionsIria = [
     { value: 'caruForest', label: '카루 숲' },
     { value: 'pela', label: '페라 화산' },
 ];
+
 export default {customStyles: tradeStyles, serverOptions, channelOptions, tradeOptions: tradeOptionsUladh}

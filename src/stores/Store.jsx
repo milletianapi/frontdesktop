@@ -1,5 +1,5 @@
 import {atom} from 'recoil';
-import {serverOptions} from "../pages/component/searchMenu/component/SelectReactOption.js";
+import {serverOptions} from "../pages/searchOne/component/searchMenu/component/SelectReactOption.js";
 
 
 export const selectedServerState = atom({

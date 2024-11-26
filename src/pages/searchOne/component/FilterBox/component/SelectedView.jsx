@@ -1,5 +1,5 @@
 import {useRecoilValue} from "recoil";
-import {selectedChannelState, selectedServerState, selectedTradeState} from "../../../../stores/Store.jsx";
+import {selectedChannelState, selectedServerState, selectedTradeState} from "../../../../../stores/Store.jsx";
 
 export const SelectedView = () => {
     const server = useRecoilValue(selectedServerState);

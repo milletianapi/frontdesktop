@@ -1,5 +1,5 @@
 import {useRecoilState} from "recoil";
-import {filterColorState} from "../../../../stores/Store.jsx";
+import {filterColorState} from "../../../../../stores/Store.jsx";
 import {useState} from "react";
 
 export const Filter = () => {

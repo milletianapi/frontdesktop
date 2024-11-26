@@ -1,5 +1,5 @@
 import {useResetRecoilState} from 'recoil';
-import {filterColorState} from "../../../../stores/Store.jsx";
+import {filterColorState} from "../../../../../stores/Store.jsx";
 
 export const SearchButton = ({handleSearch, isSearchEnabled, handleReset, handleChannelNavigation}) => {
     const resetFilterColorState = useResetRecoilState(filterColorState);

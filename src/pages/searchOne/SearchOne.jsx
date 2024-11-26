@@ -8,7 +8,7 @@ import {
     selectedChannelState,
     selectedServerState,
     selectedTradeState
-} from "../stores/Store.jsx";
+} from "../../stores/Store.jsx";
 import {useCallback, useState} from "react";
 import {channelOptions, serverOptions} from "./component/searchMenu/component/SelectReactOption.js";
 import {GetPouches} from "./component/searchMenu/component/GetPouches.js";
