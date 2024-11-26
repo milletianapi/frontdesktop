@@ -1,4 +1,4 @@
-import colors from "../pages/searchAll/mabi.total.json";
+import colors from "../pages/searchAll/component/AllPouchBox/mabi.total.json";
 import {useEffect, useState} from "react";
 
 export const ColorList = () => {

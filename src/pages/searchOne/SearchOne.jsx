@@ -1,4 +1,4 @@
-import {Title} from "./component/Title.jsx";
+import {Title} from "../compoent/Title.jsx";
 import {PouchBox} from "./component/PouchBox.jsx";
 import {SelectBox} from "./component/SelectBox.jsx";
 import {FilterBox} from "./component/FilterBox/FilterBox.jsx";

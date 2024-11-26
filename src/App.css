@@ -14,9 +14,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
-    font: 10px 'Nanum Gothic', sans-serif;
+    font: 10px 'NEXON Lv2 Gothic', sans-serif;
+    font-weight: 600; /* Medium */
 }
 
 .mabi {

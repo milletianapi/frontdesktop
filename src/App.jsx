@@ -1,11 +1,19 @@
 import './App.css';
 import {SearchOne} from "./pages/searchOne/SearchOne.jsx";
 import {SearchAll} from "./pages/searchAll/SearchAll.jsx";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+
 
 function App() {
     return (
         <div className="App w-full">
-            <SearchAll/>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<SearchOne/>} />
+                    <Route path="/totalsearch" element={<SearchAll />} />
+                </Routes>
+            </Router>
         </div>
     );
 }
