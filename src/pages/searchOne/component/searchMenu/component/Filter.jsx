@@ -106,7 +106,7 @@ export const Filter = () => {
 
     return (
         <div
-            className="w-[507px] h-[190px] p-[17px] rounded-[5px] border border-[#9f7394] flex-col justify-start items-start gap-[9px] flex">
+            className="w-[507px] h-[190px] p-[17px] button1 flex-col justify-start items-start gap-[9px] flex">
             {Object.keys(filterColors).map((key, index) => {
                 const colorState = filterColors[key];
                 return (
@@ -160,7 +160,7 @@ export const Filter = () => {
                                 값 이하
                             </div>
                             <input
-                                className="w-[86px] h-[23px] px-[13px] rounded-[3px] border border-[#d5b8e6] flex-col justify-center items-center flex text-center text-[#3c3c3c] text-xs"
+                                className="w-[86px] h-[23px] px-[13px] rounded-[3px] border border-[#d5b8e6] flex-col middle text-center text-[#3c3c3c] text-xs"
                                 value={colorState.hex}
                                 onChange={(e) => handleHexChange(e, key)}
                                 maxLength={7}
@@ -169,7 +169,7 @@ export const Filter = () => {
                         <div className="w-32 h-[46px] flex-col justify-start items-start gap-1 inline-flex">
                             <div className="w-32 justify-between items-center inline-flex">
                                 <div
-                                    className="w-[33px] h-[19px] justify-center items-center flex text-center text-[#585858] text-xs">오차
+                                    className="w-[33px] h-[19px] middle text-center text-[#585858] text-xs">오차
                                 </div>
                                 <input
                                     className="w-[95px] h-[19px] pr-[9px] rounded-[3px] border border-[#999999] justify-end items-center flex text-right text-[#3c3c3c] text-[11px]"
@@ -179,7 +179,7 @@ export const Filter = () => {
                             </div>
                             <div className="justify-start items-center inline-flex">
                                 <button
-                                    className="w-[66px] h-[23px] px-5 bg-[#cf9bee] active:bg-[#C571C7] rounded-[3px] justify-center items-center flex text-[#3b3b3b] text-xs"
+                                    className="w-[66px] h-[23px] px-5 bg-[#cf9bee] active:bg-[#C571C7] rounded-[3px] middle text-[#3b3b3b] text-xs"
                                     onClick={() => handleToggleDetails(key)}
                                 >지염
                                 </button>
@@ -199,7 +199,7 @@ export const Filter = () => {
                         </div>
                         {colorState.showDetails && (
                             <div
-                                className="-left-[9px] top-[50px] absolute w-[458px] bg-white rounded-[5px] border border-[#9f7394] p-2 z-10 flex flex-col gap-[7px]">
+                                className="-left-[9px] top-[50px] absolute w-[458px] bg-white button1 p-2 z-10 flex flex-col gap-[7px]">
                                 <div className={"flex gap-[7px]"}>
                                     <div
                                         className="w-[23px] h-[23px] border border-[#3c3c3c]"
@@ -218,11 +218,11 @@ export const Filter = () => {
                                         {colorState.rgb.g}
                                     </div>
                                     <div
-                                        className="w-[86px] h-[23px] px-[13px] rounded-[3px] border border-[#d5b8e6] flex-col justify-center items-center flex text-center text-[#3c3c3c] text-xs">
+                                        className="w-[86px] h-[23px] px-[13px] rounded-[3px] border border-[#d5b8e6] flex-col middle text-center text-[#3c3c3c] text-xs">
                                         {colorState.hex}
                                     </div>
                                     <button
-                                        className={`w-[66px] h-[23px] bg-[#cf9bee] active:bg-[#C571C7] rounded-[3px] justify-center items-center flex text-[#3b3b3b] text-xs`}
+                                        className={`w-[66px] h-[23px] bg-[#cf9bee] active:bg-[#C571C7] rounded-[3px] middle text-[#3b3b3b] text-xs`}
                                         onClick={() => handleSaveToLocalStorage(key)}
                                     >
                                         저장하기
@@ -249,11 +249,11 @@ export const Filter = () => {
                                                     {colors.g}
                                                 </div>
                                                 <div
-                                                    className="w-[86px] h-[23px] px-[13px] rounded-[3px] border border-[#d5b8e6] flex-col justify-center items-center flex text-center text-[#3c3c3c] text-xs">
+                                                    className="w-[86px] h-[23px] px-[13px] rounded-[3px] border border-[#d5b8e6] flex-col middle text-center text-[#3c3c3c] text-xs">
                                                     {color}
                                                 </div>
                                                 <button
-                                                    className={`w-[66px] h-[23px] bg-[#cf9bee] active:bg-[#C571C7] rounded-[3px] justify-center items-center flex text-[#3b3b3b] text-xs`}
+                                                    className={`w-[66px] h-[23px] bg-[#cf9bee] active:bg-[#C571C7] rounded-[3px] middle text-[#3b3b3b] text-xs`}
                                                     onClick={() => handleHexCode(color, key)}
                                                 >
                                                     불러오기

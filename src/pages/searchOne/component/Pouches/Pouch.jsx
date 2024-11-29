@@ -71,7 +71,7 @@ const Pouch = () => {
     return (
         <div className={"flex flex-wrap"}>
             {filteredPouches.length === 0 && ["a", "b", "c"].some((key) => filterColors[key].active) ? (
-                <div className={"w-full h-[146px] flex justify-center items-center pt-5"}>필터에 해당하는 튼튼한 주머니가 없습니다.</div>
+                <div className={"w-full h-[146px] middle pt-5"}>필터에 해당하는 튼튼한 주머니가 없습니다.</div>
             ) : !filteredPouches.length ? (
                 <DefaultPouch />
             ) : (

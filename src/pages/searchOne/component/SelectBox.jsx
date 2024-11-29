@@ -13,7 +13,7 @@ export const SelectBox = (props) => {
     return (
         <div className="w-[281px] h-[205px] pl-[15px] gap-3 inline-flex">
             <div
-                className="w-[101px] h-[205px] px-4 py-[15px] rounded-[5px] border border-[#9f7394] flex-col justify-center items-center gap-[7px] inline-flex">
+                className="w-[101px] h-[205px] px-4 py-[15px] button1 flex-col justify-center items-center gap-[7px] inline-flex">
                 <div className="w-[69px] h-4 text-left text-[#3f3b66] text-[13px]">서버</div>
                 {serverOptions.map((servername, index) => {
                     return (
@@ -27,7 +27,7 @@ export const SelectBox = (props) => {
                 })}
             </div>
             <div
-                className="w-[141px] h-[205px] px-4 py-[15px] rounded-[5px] border border-[#9f7394] flex-col justify-start items-center gap-[9px] inline-flex">
+                className="w-[141px] h-[205px] px-4 py-[15px] button1 flex-col justify-start items-center gap-[9px] inline-flex">
                 <div className="w-[109px] h-4 text-[#3f3b66] text-[13px] flex items-center leading-none">채널</div>
                 <Select
                     value={props.selectedChannel}

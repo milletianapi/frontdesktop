@@ -26,12 +26,19 @@ body {
     font-weight: 600; /* Medium */
 }
 
-.mabi {
-    @apply border border-solid border-[#9F7394] rounded-[5px];
+.button1 {
+    @apply border border-[#9F7394] rounded-[5px];
+}
+.button2 {
+    @apply border border-[#9F7394] rounded-[5px];
 }
 
 .mid {
     @apply flex justify-center items-center pt-0.5;
+}
+
+.middle {
+    @apply flex justify-center items-center;
 }
 
 .rgb-box {

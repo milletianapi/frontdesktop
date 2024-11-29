@@ -7,13 +7,13 @@ export const SearchButton = ({handleSearch, isSearchEnabled, handleReset, handle
     return (
         <div className="w-[111px] h-[79px] gap-[5px] flex flex-wrap text-xs">
             <button
-                className="w-[111px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
+                className="w-[111px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle"
                 onClick={handleSearch}
                 disabled={!isSearchEnabled}>
                 검색하기
             </button>
             <button
-                className="w-[111px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
+                className="w-[111px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle"
                 onClick={() => {
                     handleReset();
                     resetFilterColorState();
@@ -22,11 +22,11 @@ export const SearchButton = ({handleSearch, isSearchEnabled, handleReset, handle
             </button>
             <div className={"flex gap-[5px]"}>
                 <button
-                    className="w-[53px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
+                    className="w-[53px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle"
                     onClick={() => handleChannelNavigation('previous')}>이전채널
                 </button>
                 <button
-                    className="w-[53px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black justify-center items-center flex"
+                    className="w-[53px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle"
                     onClick={() => handleChannelNavigation('next')}>다음채널
                 </button>
             </div>
