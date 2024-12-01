@@ -8,7 +8,7 @@ export const Menu = () => {
     return (
         <div className={"mt-1.5 mb-[18px]"}>
             <div
-                className="w-[508px] h-[35px] py-[5px] bg-[#81ffdb]  rounded-lg justify-center items-center gap-[17px] inline-flex">
+                className="w-[508px] h-[35px] py-[5px] bg-[#81ffdb]  rounded-lg middle gap-[17px]">
                 <Link to="/"
                       className={`w-[115px] h-[35px] py-2 ${
                           isActive("/") ? "bg-[#05B1A9]" : "hover:bg-[#26DECF] active:bg-[#05B1A9]"

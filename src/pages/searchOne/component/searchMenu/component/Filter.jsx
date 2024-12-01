@@ -113,7 +113,7 @@ export const Filter = () => {
                     <div key={index}
                          className="w-[472px] h-[46px] justify-start items-center gap-[7px] inline-flex relative">
                         <div className="w-[23px] h-[46px] flex-col justify-start items-start gap-1 inline-flex">
-                            <div className="w-[23px] h-[19px] pt-[5px] justify-center items-center gap-2.5 inline-flex">
+                            <div className="w-[23px] h-[19px] pt-[5px] middle gap-2.5 ">
                                 <div className="text-center text-[#232323] text-xs">{key.toUpperCase()}팟</div>
                             </div>
                             <input
@@ -125,7 +125,7 @@ export const Filter = () => {
                         </div>
                         <div className="w-[67px] h-[46px] flex items-end">
                             <input
-                                className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs"
+                                className="rgbinput"
                                 value={colorState.rgb.r}
                                 onChange={(e) => handleRgbChange(e, key, "r")}
                                 placeholder="R"
@@ -137,7 +137,7 @@ export const Filter = () => {
                                 계산
                             </div>
                             <input
-                                className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs"
+                                className="rgbinput"
                                 value={colorState.rgb.g}
                                 onChange={(e) => handleRgbChange(e, key, "g")}
                                 placeholder="G"
@@ -145,10 +145,10 @@ export const Filter = () => {
                         </div>
                         <div className="w-[67px] h-[46px] flex-col justify-start items-start gap-1 inline-flex">
                             <div
-                                className="w-[67px] h-[19px] px-[11px] rounded-[3px] border border-[#999999] justify-center items-center inline-flex text-center text-[#3c3c3c]">RGB거리
+                                className="w-[67px] h-[19px] px-[11px] rounded-[3px] border border-[#999999] middle text-center text-[#3c3c3c]">RGB거리
                             </div>
                             <input
-                                className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs"
+                                className="rgbinput"
                                 value={colorState.rgb.b}
                                 onChange={(e) => handleRgbChange(e, key, "b")}
                                 placeholder="B"
@@ -156,7 +156,7 @@ export const Filter = () => {
                         </div>
                         <div className="w-[86px] h-[46px] flex-col justify-start items-start gap-1 inline-flex">
                             <div
-                                className="w-[86px] h-[19px] px-[13px] py-1 rounded-[3px] border border-[#999999] justify-center items-center gap-2.5 inline-flex text-center text-[#3c3c3c]">오차
+                                className="w-[86px] h-[19px] px-[13px] py-1 rounded-[3px] border border-[#999999] middle gap-2.5 text-center text-[#3c3c3c]">오차
                                 값 이하
                             </div>
                             <input
@@ -206,15 +206,15 @@ export const Filter = () => {
                                         style={{backgroundColor: colorState.hex}}
                                     />
                                     <div
-                                        className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs">
+                                        className="rgbinput">
                                         {colorState.rgb.r}
                                     </div>
                                     <div
-                                        className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs">
+                                        className="rgbinput">
                                         {colorState.rgb.b}
                                     </div>
                                     <div
-                                        className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs">
+                                        className="rgbinput">
                                         {colorState.rgb.g}
                                     </div>
                                     <div
@@ -237,15 +237,15 @@ export const Filter = () => {
                                                     style={{backgroundColor: color}}
                                                 />
                                                 <div
-                                                    className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs">
+                                                    className="rgbinput">
                                                     {colors.r}
                                                 </div>
                                                 <div
-                                                    className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs">
+                                                    className="rgbinput">
                                                     {colors.b}
                                                 </div>
                                                 <div
-                                                    className="w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs">
+                                                    className="rgbinput">
                                                     {colors.g}
                                                 </div>
                                                 <div

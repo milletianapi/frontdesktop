@@ -26,6 +26,10 @@ body {
     font-weight: 600; /* Medium */
 }
 
+.rgbinput {
+    @apply w-[67px] h-[23px] px-[9px] flex items-center justify-end rounded-[3px] border border-[#d5b8e6] text-right text-[#3b3b3b] text-xs
+}
+
 .button1 {
     @apply border border-[#9F7394] rounded-[5px];
 }

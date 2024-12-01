@@ -18,7 +18,7 @@ export const SelectBox = (props) => {
                 {serverOptions.map((servername, index) => {
                     return (
                         <button key={index}
-                                className={`w-[69px] h-[25px] ${props.activeButton === servername.value ? `bg-[#FF9BC3]/90` : `bg-[#ffcce6]/90`} rounded-[5px] justify-center items-center inline-flex text-[#58528b] text-xs`}
+                                className={`w-[69px] h-[25px] ${props.activeButton === servername.value ? `bg-[#FF9BC3]/90` : `bg-[#ffcce6]/90`} rounded-[5px] middle text-[#58528b] text-xs`}
                                 onClick={() => props.handleServerChange(servername.value)}
                         >
                             {servername.label}

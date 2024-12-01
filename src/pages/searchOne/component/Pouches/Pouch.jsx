@@ -48,13 +48,13 @@ const Pouch = () => {
         });
 
         return (
-            <div key={key} className={"pt-5 flex items-center justify-center w-[128px] flex-wrap text-[10px]"}>
+            <div key={key} className={"pt-5 middle w-[128px] flex-wrap text-[10px]"}>
                 <img src={image_url} alt={item_name} width={80} height={80} />
                 <p>{item_name}</p>
                 <div className={"w-full mt-0.5"}></div>
                 <div className={"flex justify-normal flex-wrap pl-2"}>
                     {colors.map(({ label, rgb }) => (
-                        <div key={label} className={"flex items-center justify-center"}>
+                        <div key={label} className={"middle"}>
                             <p className={"w-5 text-center"}>{label}</p>
                             <div
                                 className={"w-[10px] h-[10px] ml-1 mr-1 -translate-y-[2px]"}

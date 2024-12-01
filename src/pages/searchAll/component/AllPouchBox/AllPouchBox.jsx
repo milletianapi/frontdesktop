@@ -1,14 +1,8 @@
 import {useEffect, useState} from "react";
 import {AllDefaultPouchOne} from "../../../searchOne/component/Pouches/component/AllDefaultPouchOne.jsx";
 import {AllPouchOne} from "../../../searchOne/component/Pouches/AllPouchOne.jsx";
+import {items, sets} from "../../util.js";
 
-const items = [
-    "달", "감", "옥", "밀", "보",
-    "양", "거", "가", "굵", "저",
-    "일", "고", "최",  "저", "일",
-    "고", "최",  "저", "일", "고",
-    "최", "꽃"
-];
 
 const allItems = [
     {item_name: "튼튼한 달걀 주머니", event: null, color: null},
@@ -35,7 +29,6 @@ const allItems = [
     {item_name: "튼튼한 꽃바구니", event: null, color: null}
 ]
 
-const sets = ["방직","가죽","옷감","실크"]
 
 export const AllPouchBox = ({pouches}) => {
     const color = pouches._id;
@@ -84,7 +77,7 @@ export const AllPouchBox = ({pouches}) => {
                 </div>
                 <div className={"flex gap-0.5"}>
                     {allPouch.map((pouch, index) => {
-                        const text = items[index];
+                        const text = items[index].label;
                         const isSet = (index === 5 || index === 9 || index === 13 || index === 17);
                         let isSets = true;
                         if(isSet){
@@ -120,18 +113,6 @@ export const AllPouchBox = ({pouches}) => {
                     })}
                 </div>
             </div>}
-            {/*<div className="w-[776px] bg-white rounded-[10px] border border-[#9f7394] py-5 flex justify-center">*/}
-            {/*    <ul className={"flex flex-wrap"}>*/}
-            {/*        {total.map((color, index) => {*/}
-            {/*            return (*/}
-            {/*                <li key={index} className={"w-5 h-5 border border-black"}*/}
-            {/*                style={{backgroundColor: `rgb(${color._id.r}, ${color._id.g}, ${color._id.b})`}}*/}
-            {/*                ></li>*/}
-            {/*            )*/}
-            {/*        })}*/}
-
-            {/*    </ul>*/}
-            {/*</div>*/}
         </div>
     )
 }

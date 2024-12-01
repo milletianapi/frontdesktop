@@ -1,13 +1,24 @@
 import {Title} from "../compoent/Title.jsx";
 import {AllPouchBox} from "./component/AllPouchBox/AllPouchBox.jsx";
-import {useState} from "react";
-import {response} from "./mabialltest.js";
+import {useMemo, useState} from "react";
 import {Menu} from "../compoent/Menu.jsx";
 import {Filter} from "../searchOne/component/searchMenu/component/Filter.jsx";
 import {Timer} from "../searchOne/component/FilterBox/component/Timer.jsx";
+import {SearchAllButton} from "./component/SearchAllButton.jsx";
+import {FilterPouch} from "./component/FilterPouch.jsx";
 
 export const SearchAll = () => {
-    const [pouches, setPouches] = useState(response);
+    const [pouches, setPouches] = useState([]);
+    const [isDefault, setIsDefault] = useState(true);
+    const [filterStart, setFilterStart] = useState(false);
+    const [query, setQuery] = useState({"items.item_name": {$all: []}})
+    const [loading, setLoading] = useState(true)
+
+    const renderedPouches = useMemo(() => {
+        return pouches.map((pouch, index) => (
+            <AllPouchBox key={index} pouches={pouch} setIsDefault={setIsDefault} />
+        ));
+    }, [pouches]);
 
     return (
         <div className={"w-full"}>
@@ -18,23 +29,18 @@ export const SearchAll = () => {
                             <div>
                                 <Title/>
                                 <Timer isAll={true}/>
-                                <button
-                                    className="ml-[18px] mt-2 mb-1 w-[247px] h-[22px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle">
-                                    검색하기
-                                </button>
+                                <SearchAllButton setPouches={setPouches} setIsDefault={setIsDefault} query={query}
+                                                 filterStart={filterStart} setloading={setLoading}/>
                             </div>
                             <div className={"pt-[14px]"}>
                                 <Menu/>
+                                <div className={"h-[7px]"}></div>
                                 <Filter/>
+                                <FilterPouch setFilterStart={setFilterStart} query={query} setQuery={setQuery}/>
                             </div>
                         </div>
                     </div>
-
-                    {pouches.map((pouch, index) => {
-                        return (<AllPouchBox key={index} pouches={pouch}/>)
-                    })
-
-                    }
+                    {loading ? renderedPouches : `주머니를 가져오는 중 ...`}
                 </div>
             </div>
         </div>

@@ -9,13 +9,13 @@ const threePot = [`A`, `B`, `C`]
 export const AllDefaultPouchOne = ({item}) =>  {
         const url = 'https://open.api.nexon.com/static/mabinogi/img/' + decode_item[item.item_name]
         return (
-            <div className={"flex items-center justify-center w-[128px] flex-wrap text-[11px]"} key={item.item_name}>
+            <div className={"middle w-[128px] flex-wrap text-[11px]"} key={item.item_name}>
                 <img src={url} alt={`${item.item_name}`} width={80} height={80}></img>
                 <a> {item.item_name} </a>
                 <div className={"w-full mt-0.5"}></div>
                 <div className={"flex justify-normal flex-wrap pl-1"}>
                     {threePot.map((pot, index) => <div key={index}
-                                                       className={"flex items-center justify-center w-[120px]"}>
+                                                       className={"middle w-[120px]"}>
                         <a className={"w-5 text-center"}>{pot}팟</a>
                         <div className={"w-[11px] h-[11px] mx-1"} style={{backgroundColor: `rgb(0, 0, 0`}}></div>
                         <a>(000, 000, 000)</a>

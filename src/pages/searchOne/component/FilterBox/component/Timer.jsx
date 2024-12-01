@@ -59,7 +59,7 @@ export const Timer = (props) => {
 
     return (
         <div
-            className={`${isAll ? `ml-[18px] w-[247px] h-[112px] flex-wrap` : `w-[386px] h-[50px] tracking-wider`} button1 middle text-[#3f3f3f] text-sm `}>
+            className={`${isAll ? `ml-[18px] w-[251px] h-[66px] flex-wrap` : `w-[386px] h-[50px] tracking-wider`} button1 middle text-[#3f3f3f] text-sm `}>
             {handleTime()}
         </div>
     );
