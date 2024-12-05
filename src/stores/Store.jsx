@@ -22,7 +22,7 @@ export const pouchesState = atom({
     default: null,
 });
 
-const createColorState = () => ({
+export const createColorState = () => ({
     hex: "#000000",
     rgb: {r: 0, g: 0, b: 0},
     selectCollection: false,
@@ -36,4 +36,5 @@ export const filterColorState = atom({
     key: 'filterColorState',
     default: { a: createColorState(), b: createColorState(), c: createColorState() },
 });
+
 

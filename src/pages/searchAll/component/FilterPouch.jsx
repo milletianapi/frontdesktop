@@ -1,13 +1,17 @@
 import {items, sets} from "../util.js";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 // eslint-disable-next-line react/prop-types
-export const FilterPouch = ({query, setQuery, setFilterStart}) => {
-    const [pouchFilter, setPouchFilter] = useState(items);
+export const FilterPouch = ({query, setQuery, setFilterStart, pouchFilter, setPouchFilter}) => {
+    const [pouchFilterTemp, setPouchFilterTemp] = useState([...items]);
 
     const test = (e) => {
         console.log(e.target.checked);
         setFilterStart(e.target.checked);
+    }
+
+    const test2 = () => {
+        setPouchFilterTemp([...items])
     }
 
     const handleChangeFilterStatus = (e, itemName, index) => {
@@ -29,6 +33,7 @@ export const FilterPouch = ({query, setQuery, setFilterStart}) => {
         <div
             className={`mt-[7px] flex px-5 items-center w-[507px] h-[44px] button1 text-[#3f3f3f] text-[12px] gap-0.5`}>
             <div className={"mr-[6px]"}>
+                <button onClick={test2}>초기화</button>
                 <p>주머니 별 보기</p>
                 <label>활성화<input type={"checkbox"} className={"ml-1 w-2.5 h-2.5 mt-0.5 translate-y-[1px]"}
                                  onClick={(e) => test(e)}

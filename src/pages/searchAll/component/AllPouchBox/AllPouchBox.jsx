@@ -2,35 +2,9 @@ import {useEffect, useState} from "react";
 import {AllDefaultPouchOne} from "../../../searchOne/component/Pouches/component/AllDefaultPouchOne.jsx";
 import {AllPouchOne} from "../../../searchOne/component/Pouches/AllPouchOne.jsx";
 import {items, sets} from "../../util.js";
+import {allItems} from "./component/allItems.js";
 
-
-const allItems = [
-    {item_name: "튼튼한 달걀 주머니", event: null, color: null},
-    {item_name: "튼튼한 감자 주머니", event: null, color: null},
-    {item_name: "튼튼한 옥수수 주머니", event: null, color: null},
-    {item_name: "튼튼한 밀 주머니", event: null, color: null},
-    {item_name: "튼튼한 보리 주머니", event: null, color: null},
-    {item_name: "튼튼한 양털 주머니", event: null, color: null},
-    {item_name: "튼튼한 거미줄 주머니", event: null, color: null},
-    {item_name: "튼튼한 가는 실뭉치 주머니", event: null, color: null},
-    {item_name: "튼튼한 굵은 실뭉치 주머니", event: null, color: null},
-    {item_name: "튼튼한 저가형 가죽 주머니", event: null, color: null},
-    {item_name: "튼튼한 일반 가죽 주머니", event: null, color: null},
-    {item_name: "튼튼한 고급 가죽 주머니", event: null, color: null},
-    {item_name: "튼튼한 최고급 가죽 주머니", event: null, color: null},
-    {item_name: "튼튼한 저가형 옷감 주머니", event: null, color: null},
-    {item_name: "튼튼한 일반 옷감 주머니", event: null, color: null},
-    {item_name: "튼튼한 고급 옷감 주머니", event: null, color: null},
-    {item_name: "튼튼한 최고급 옷감 주머니", event: null, color: null},
-    {item_name: "튼튼한 저가형 실크 주머니", event: null, color: null},
-    {item_name: "튼튼한 일반 실크 주머니", event: null, color: null},
-    {item_name: "튼튼한 고급 실크 주머니", event: null, color: null},
-    {item_name: "튼튼한 최고급 실크 주머니", event: null, color: null},
-    {item_name: "튼튼한 꽃바구니", event: null, color: null}
-]
-
-
-export const AllPouchBox = ({pouches}) => {
+export const AllPouchBox = ({pouches, isOne}) => {
     const color = pouches._id;
     const [allPouch, setAllPouch] = useState([...allItems]);
     const [isView, setIsView] = useState(false)
@@ -61,6 +35,7 @@ export const AllPouchBox = ({pouches}) => {
     }
 
     useEffect(() => {
+        if(isOne){setIsView(true)}
         handlePouchUpdate()
     },[])
     return (
