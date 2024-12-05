@@ -32,9 +32,7 @@ export const SearchAllButton = ({query,setQuery,setFilterStart,setPouchFilter,se
     }
 
     const handleReset = () => {
-        setPouchFilter([...items])
-        console.log([...items])
-        console.log()
+        setPouchFilter(JSON.parse(JSON.stringify(items)))
         setQuery({"items.item_name": {$all: []}})
         setFilterStart(false)
 

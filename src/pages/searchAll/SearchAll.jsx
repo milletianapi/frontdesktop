@@ -11,6 +11,7 @@ import {items} from "./util.js";
 
 const defaultPouch = {"_id": {"a": {"r": 0, "g": 0, "b": 0}, "b": {"r": 0, "g": 0, "b": 0}, "c": {"r": 0, "g": 0, "b": 0}}, "items": []}
 
+const setting = JSON.parse(JSON.stringify(items));
 
 export const SearchAll = () => {
     const [pouches, setPouches] = useState([defaultPouch]);
@@ -18,12 +19,7 @@ export const SearchAll = () => {
     const [filterStart, setFilterStart] = useState(false);
     const [query, setQuery] = useState({"items.item_name": {$all: []}})
     const [loading, setLoading] = useState(true)
-    const [pouchFilter, setPouchFilter] = useState([...items]);
-
-    useEffect(() => {
-        console.log("change");
-        }
-    , [pouchFilter, query, filterStart])
+    const [pouchFilter, setPouchFilter] = useState( setting);
 
     const renderedPouches = useMemo(() => {
         console.log(pouches.length);
@@ -56,6 +52,7 @@ export const SearchAll = () => {
                                 <div className={"h-[7px]"}></div>
                                 <Filter/>
                                 <FilterPouch
+                                    filterStart={filterStart}
                                     setFilterStart={setFilterStart}
                                     query={query}
                                     setQuery={setQuery}
