@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useMemo, useState} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const Timer = (props) => {
     const CYCLE_DURATION = 36 * 60 * 1000;
@@ -10,14 +10,14 @@ export const Timer = (props) => {
         const now = new Date();
         const elapsed = now.getTime() - startTime.getTime();
         const currentCycle = Math.floor(elapsed / CYCLE_DURATION) + 1;
-        const nextCycleTime = (currentCycle * CYCLE_DURATION) + startTime.getTime();
+        const nextCycleTime = currentCycle * CYCLE_DURATION + startTime.getTime();
         const timeLeft = nextCycleTime - now.getTime();
 
-        return {cycleCount: currentCycle, timeLeft};
+        return { cycleCount: currentCycle, timeLeft };
     };
 
     const [time, setTime] = useState(new Date());
-    const [{cycleCount, timeLeft}, setCycleData] = useState(getInitialCycleData);
+    const [{ cycleCount, timeLeft }, setCycleData] = useState(getInitialCycleData);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -29,7 +29,7 @@ export const Timer = (props) => {
 
     useEffect(() => {
         const timerId = setInterval(() => {
-            setTime(prevTime => {
+            setTime((prevTime) => {
                 return new Date(prevTime.getTime() + 1000);
             });
         }, 1000);
@@ -37,13 +37,32 @@ export const Timer = (props) => {
         return () => clearInterval(timerId);
     }, []);
 
+    // 1분마다 00초에 실행되도록 설정
+    useEffect(() => {
+        const executeOnMinute = () => {
+            props.setOneMinute(Math.floor(Math.random()*100));
+        };
+
+        const alignToNextMinute = () => {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const delay = (60 - seconds) * 1000; // 다음 00초까지 남은 시간 계산
+            setTimeout(() => {
+                executeOnMinute(); // 첫 실행
+                setInterval(executeOnMinute, 60000); // 이후 매 1분마다 실행
+            }, delay);
+        };
+
+        alignToNextMinute();
+    }, [cycleCount, timeLeft]);
+
     const formattedTime = useMemo(() => {
-        const minutes = String(Math.floor(timeLeft / (1000 * 60))).padStart(2, '0');
-        const seconds = String(Math.floor((timeLeft % (1000 * 60)) / 1000)).padStart(2, '0');
+        const minutes = String(Math.floor(timeLeft / (1000 * 60))).padStart(2, "0");
+        const seconds = String(Math.floor((timeLeft % (1000 * 60)) / 1000)).padStart(2, "0");
         return {
             timeString: time.toLocaleTimeString().substring(0, time.toLocaleTimeString().length - 3),
             minutes,
-            seconds
+            seconds,
         };
     }, [timeLeft]);
 
@@ -59,8 +78,9 @@ export const Timer = (props) => {
 
     return (
         <div
-            className={`${isAll ? `ml-[18px] w-[251px] h-[66px] flex-wrap` : `w-[386px] h-[50px] tracking-wider`} button1 middle text-[#3f3f3f] text-sm `}>
+            className={`${isAll ? `ml-[15px] w-[251px] h-[62px] flex-wrap` : `w-[386px] h-[50px] tracking-wider`} button1 middle text-[#3f3f3f] text-sm `}>
             {handleTime()}
+            {isAll && <div className={"text-[#999999] middle text-[12px]"}>※ 주머니는 남은시간 30분에 갱신</div>}
         </div>
     );
 };

@@ -40,19 +40,19 @@ export const SearchAllButton = ({query,setQuery,setFilterStart,setPouchFilter,se
     }
 
     return (
-        <>
+        <div className={`ml-[15px] mb-1 w-[251px] flex justify-between`}>
             <button
-                className="ml-[18px] mt-2 mb-1 w-[251px] h-[44px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle text-2xl"
-                onClick={handleReset}
-            >
-                조건초기화
-            </button>
-            <button
-                className="ml-[18px] mt-2 mb-1 w-[251px] h-[44px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle text-2xl"
+                className="w-[122px] h-[44px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle text-xl"
                 onClick={handleGroupedPouch}
             >
                 검색하기
             </button>
-        </>
+            <button
+                className="w-[122px] h-[44px] bg-[#baa0e1] active:bg-[#C571C7] rounded-[5px] border border-black middle text-xl"
+                onClick={handleReset}
+            >
+                조건초기화
+            </button>
+        </div>
     )
 }

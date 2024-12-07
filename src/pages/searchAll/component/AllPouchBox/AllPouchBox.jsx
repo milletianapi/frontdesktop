@@ -39,13 +39,13 @@ export const AllPouchBox = ({pouches, isOne}) => {
         handlePouchUpdate()
     },[])
     return (
-        <div className="w-[806px] px-[15px] left-0 top-[356px] bg-white">
+        <div className="w-[803px] px-[15px] left-0 top-[356px] bg-white">
             <div className={`w-full flex items-center text-[12px] py-1 ${!isView && `border-b border-[#9f7394]`}`}>
                 <div className={"w-full flex justify-between items-center"}>
                     <div className="flex">
                         {colors.map(({label, rgb}) => (
                             <div key={`${label}`} className={"flex items-center"}>
-                                <div className={"w-[23px] h-[23px]"} style={{backgroundColor: `rgb(${rgb})`}}></div>
+                                <div className={"w-[21px] h-[21px]"} style={{backgroundColor: `rgb(${rgb})`}}></div>
                                 <div className={"ml-1 w-[90px] text-left"}>({rgb})</div>
                             </div>
                         ))}
@@ -74,9 +74,9 @@ export const AllPouchBox = ({pouches, isOne}) => {
                     })}
                 </div>
                 </div>
-                <button className={"ml-2 min-w-[23px] h-[23px] button1 middle"} onClick={handleView}>▼</button>
+                <button className={"ml-2 min-w-[21px] h-[21px] button1 middle"} onClick={handleView}>▼</button>
             </div>
-            {isView && <div className="w-[776px] bg-white rounded-[10px] border border-[#9f7394] py-5 flex justify-center">
+            {isView && <div className="w-[773px] bg-white rounded-[10px] border border-[#9f7394] py-5 flex justify-center">
                 <div className={"flex flex-wrap"}>
                     {allPouch.map((pouch) => {
                         return (

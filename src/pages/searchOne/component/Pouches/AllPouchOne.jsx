@@ -104,13 +104,13 @@ export const AllPouchOne = ({item, color, colors}) => {
                                         )}
                                         {expanded[server] && events.length > 1 && (
                                             <div
-                                                className={"absolute bg-white border border-[#9f7394] rounded-[10px] shadow-md py-2 mt-1 z-10 w-full -translate-y-1 -translate-x-1"}>
+                                                className={"absolute bg-white border border-[#9f7394] rounded-[10px] shadow-md pl-1 py-2 mt-1 z-10 w-full -translate-y-1 -translate-x-1"}>
                                                 {events.slice(1).map((event, index) => (
                                                     <div key={`${server}-${index + 1}`}
                                                          className={"flex items-center h-[17px]"}>
                                                         <div className={"w-[18px] h-[17px]"}></div>
                                                         <p className={"mx-1 w-[35px] text-center"}>{`${event.channel >= 10 ? "" : `0`}${event.channel}채널`}</p>
-                                                        <p className={"w-[50px] text-center"}>{decodeTrade[event.trade]}</p>
+                                                        <p className={"w-[50px]"}>{decodeTrade[event.trade]}</p>
                                                     </div>
                                                 ))}
                                             </div>

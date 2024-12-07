@@ -10,8 +10,8 @@ function App() {
         <div className="App w-full">
             <Router>
                 <Routes>
-                    <Route path="/" element={<SearchOne/>} />
-                    <Route path="/searchall" element={<SearchAll />} />
+                    <Route path="test/*" element={<SearchOne/>} />
+                    <Route path="test/searchall/*" element={<SearchAll />} />
                 </Routes>
             </Router>
         </div>

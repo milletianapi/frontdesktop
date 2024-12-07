@@ -8,6 +8,7 @@ import {SearchAllButton} from "./component/SearchAllButton.jsx";
 import {FilterPouch} from "./component/FilterPouch.jsx";
 import {NotfoundPouch} from "./component/NotfoundPouch.jsx";
 import {items} from "./util.js";
+import axios from "axios";
 
 const defaultPouch = {"_id": {"a": {"r": 0, "g": 0, "b": 0}, "b": {"r": 0, "g": 0, "b": 0}, "c": {"r": 0, "g": 0, "b": 0}}, "items": []}
 
@@ -15,11 +16,20 @@ const setting = JSON.parse(JSON.stringify(items));
 
 export const SearchAll = () => {
     const [pouches, setPouches] = useState([defaultPouch]);
-    const [isDefault, setIsDefault] = useState(true);
     const [filterStart, setFilterStart] = useState(false);
     const [query, setQuery] = useState({"items.item_name": {$all: []}})
     const [loading, setLoading] = useState(true)
-    const [pouchFilter, setPouchFilter] = useState( setting);
+    const [pouchFilter, setPouchFilter] = useState(setting);
+    const [searchAllReady, setSearchAllReady] = useState({status:"로딩중", count: 0});
+    const [oneMinute, setOneMinute] = useState(0);
+
+    useEffect(() => {
+        const handleping = async () => {
+            const status = await axios.get("https://milletianapi.com/searchallping")
+            setSearchAllReady(status.data)
+        }
+        handleping();
+    },[oneMinute])
 
     const renderedPouches = useMemo(() => {
         console.log(pouches.length);
@@ -37,7 +47,12 @@ export const SearchAll = () => {
                         <div className={"flex"}>
                             <div>
                                 <Title/>
-                                <Timer isAll={true}/>
+                                <Timer isAll={true} setOneMinute={setOneMinute}/>
+                                <div
+                                    className={"ml-[15px] h-[50px] mt-[7px] mb-[7px] w-[251px] button1 middle flex-wrap text-[#3f3f3f] text-sm text-center"}>
+                                    <div className={"w-[251px]"}><p>주머니 갱신 여부 : {searchAllReady.status}</p></div>
+                                    <div><p>{searchAllReady.status === `준비중` ? `이전` : `현재`} 주기 색상 종류 : {searchAllReady.count}</p></div>
+                                </div>
                                 <SearchAllButton setPouches={setPouches}
                                                  setQuery={setQuery}
                                                  query={query}
