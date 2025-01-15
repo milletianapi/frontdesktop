@@ -1,8 +1,8 @@
 import './App.css';
 import {SearchOne} from "./pages/searchOne/SearchOne.jsx";
 import {SearchAll} from "./pages/searchAll/SearchAll.jsx";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {Main} from "./pages/main/Main.jsx";
 
 
 function App() {
@@ -10,8 +10,9 @@ function App() {
         <div className="App w-full">
             <Router>
                 <Routes>
-                    <Route path="test/*" element={<SearchOne/>} />
-                    <Route path="test/searchall/*" element={<SearchAll />} />
+                    <Route path="/" element={<Main/>} />
+                    <Route path="/searchone" element={<SearchOne/>} />
+                    <Route path="/searchall" element={<SearchAll />} />
                 </Routes>
             </Router>
         </div>

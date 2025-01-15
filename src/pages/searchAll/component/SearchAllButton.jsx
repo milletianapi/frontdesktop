@@ -2,13 +2,33 @@ import axios from "axios";
 import {useRecoilState} from "recoil";
 import {createColorState, filterColorState} from "../../../stores/Store.jsx";
 import {items} from "../util.js";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useEffect} from "react";
 
 const buttonFunc = [`조건초기화`, `전체 검색하기`]
 
 export const SearchAllButton = ({query,setQuery,setFilterStart,setPouchFilter,setPouches,filterStart,setloading}) => {
     const [filterColors, setFilterColors] = useRecoilState(filterColorState);
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (location.search) {
+            navigate(location.pathname, { replace: true });
+        }
+    }, [location, navigate]);
+
+
+    useEffect(() => {
+        const toMain = queryParams.get("tomain");
+        if(toMain) {
+            handleGroupedPouch()
+        }
+    }, []);
 
     const handleGroupedPouch = async () => {
+
         const ColorQuery = {};
         if(filterStart){ColorQuery["items.item_name"] = query["items.item_name"]}
         const calculateRange = (value, tolerance) => ({

@@ -78,7 +78,7 @@ export const Timer = (props) => {
 
     return (
         <div
-            className={`${isAll ? `ml-[15px] w-[251px] h-[62px] flex-wrap` : `w-[386px] h-[50px] tracking-wider`} button1 middle text-[#3f3f3f] text-sm `}>
+            className={`${isAll ? `ml-[15px] w-[251px] h-[62px] flex-wrap` : `${props.isMain ? `w-full h-[64px]` : `w-[386px] h-[50px]`} tracking-wider`} button1 middle text-[#3f3f3f] text-sm `}>
             {handleTime()}
             {isAll && <div className={"text-[#999999] middle text-[12px]"}>※ 주머니는 남은시간 30분에 갱신</div>}
         </div>
